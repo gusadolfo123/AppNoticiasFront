@@ -1,0 +1,13 @@
+<div class="row justify-content-center align-content-center mb-4">
+  <div class="card mb-2" *ngFor="let notice of notices">
+    <div class="imagen"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{ notice.title }}</h5>
+      <p class="card-text">{{ notice.content }}</p>
+    </div>
+    <div class="card-footer d-flex">
+      <small class="text-muted mr-auto">Fecha Creacion: {{ notice.creationDate }}</small>
+      <small class="text-muted"><a [routerLink]="['/noticias', notice.id ]">Leer mas...</a></small>
+    </div>
+  </div>
+</div>

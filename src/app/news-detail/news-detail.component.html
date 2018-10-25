@@ -1,0 +1,18 @@
+<div class="row justify-content-center align-content-center mb-4 mt-4">
+  <div class="card mb-2">
+    <div class="imagen"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{ notice.title }}</h5>
+      <p class="card-text">{{ notice.content }}</p>
+    </div>
+    <div class="card-footer d-flex">
+      <small class="text-muted mr-auto">Fecha Creacion: {{ notice.creationDate }}</small>
+    </div>
+  </div>
+</div>
+<div>
+  <app-form-comment class="row justify-content-center align-content-center mb-4"></app-form-comment>
+  <button class="btn btn-sm btn-outline-success" (click)="loadComments()">Ver Comentarios</button>
+  <app-list-comments *ngIf="this.bloadComments" class="row justify-content-center align-content-center" [user_id]="1"
+    [notice_id]="notice.id"></app-list-comments>
+</div>
